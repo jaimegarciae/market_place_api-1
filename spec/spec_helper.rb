@@ -56,6 +56,16 @@ RSpec.configure do |config|
   #     end
   #
   # The different available types are documented in the features, such as in
-  # https://relishapp.com/rspec/rspec-rails/v/3-0/docs
+  # https://relishapp.com/rspec/rspec-rails/v/3-0/doc
+  RSpec.configure do |config|
+    config.include Devise::TestHelpers, :type => :controller
+  end
+
+  Shoulda::Matchers.configure do |config|
+   config.integrate do |with|
+     with.test_framework :rspec
+     with.library :rails
+   end
+  end
   config.infer_spec_type_from_file_location!
 end
