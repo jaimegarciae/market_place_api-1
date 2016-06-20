@@ -57,9 +57,7 @@ RSpec.configure do |config|
   #
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/v/3-0/doc
-  RSpec.configure do |config|
-    config.include Devise::TestHelpers, :type => :controller
-  end
+  config.include Devise::TestHelpers, :type => :controller
 
   Shoulda::Matchers.configure do |config|
    config.integrate do |with|
